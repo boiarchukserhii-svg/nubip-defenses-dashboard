@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; connect-src 'self' https://raw.githubusercontent.com https://boiarchukserhii-svg.github.io; base-uri 'none'; object-src 'none'">
+<title>Захисти дисертацій НУБіП України (2026)</title>
+<link rel="stylesheet" href="./dashboard.css">
+<script src="./data-source.js" defer></script>
+<script src="./dashboard.js" defer></script>
+</head>
+<body><main>
+<nav class="site-links" aria-label="Пов’язані сторінки">
+  <a class="site-link" href="https://boiarchukserhii-svg.github.io/nubip-defenses/">← До застосунку «Захисти НУБіП»</a>
+  <a class="site-link" href="https://nubip.edu.ua/department/viddil-aspirantury-doktorantury-ta-atestatsiyi-naukovykh-kadriv">← До сторінки відділу аспірантури, докторантури та атестації наукових кадрів</a>
+</nav>
+<p id="dashboard-loading" role="status">Завантажуємо дані захистів…</p>
+<section hidden id="nubip-defenses-2026" aria-label="Захисти дисертацій НУБіП">
+  <h1>Захисти дисертацій НУБіП України (2026)</h1>
+  <p class="text-small text-muted" data-as-of></p>
+  <div class="viz-controls">
+    <label class="form-label">Місяць захисту
+      <select class="form-select" data-year><option value="">Усі місяці</option></select>
+    </label>
+    <label class="form-label">Науковий ступінь
+      <select class="form-select" data-faculty><option value="">Усі ступені</option></select>
+    </label>
+    <label class="form-label">Спеціальність
+      <select class="form-select" data-specialty><option value="">Усі спеціальності</option></select>
+    </label>
+    <label class="form-label">Період
+      <select class="form-select" data-status><option value="">Усі дати</option></select>
+    </label>
+  </div>
+  <div class="viz-row filter-summary"><span class="text-small" data-selection></span><button class="btn btn-ghost" type="button" data-reset hidden>Скинути всі</button></div>
+  <div class="viz-grid">
+    <div class="card viz-stat"><span>Усього захистів</span><strong class="viz-stat-value tabular-nums" data-total>—</strong></div>
+    <div class="card viz-stat"><span>Проведені захисти</span><strong class="viz-stat-value tabular-nums" data-active>—</strong></div>
+    <div class="card viz-stat"><span>Заплановані захисти</span><strong class="viz-stat-value tabular-nums" data-leave>—</strong></div>
+  </div>
+  <div class="donut-grid" data-rankings>
+    <section><h2>Проведені та заплановані</h2><div data-status-donut></div></section>
+    <section><h2>За науковим ступенем</h2><div data-faculty-ranking></div></section>
+    <section class="specialties-chart">
+      <h2><button type="button" class="chart-expand" data-open-specialties aria-haspopup="dialog">За спеціальностями <span aria-hidden="true">↗</span></button></h2>
+      <div data-specialty-ranking></div>
+    </section>
+  </div>
+  <h2>Захисти за місяцями</h2>
+  <div class="viz-row text-small" data-legend aria-label="Періоди"></div>
+  <p class="text-small text-muted" data-unit>Кількість захистів</p>
+  <div class="cohort-plot" role="list" aria-label="Кількість захистів за місяцями й періодами"></div>
+  <p data-empty hidden>За вибраними умовами захистів немає.</p>
+  <p class="sr-only" aria-live="polite" data-announcement></p>
+  <dialog class="specialty-dialog" data-specialty-dialog aria-labelledby="specialty-dialog-title">
+    <div class="dialog-heading">
+      <div><h2 id="specialty-dialog-title">Захисти за спеціальностями</h2><p class="text-small text-muted" data-specialty-context></p></div>
+      <button type="button" class="btn" data-close-specialties>Закрити ✕</button>
+    </div>
+    <p class="text-small text-muted">Кількість захистів</p>
+    <ol class="specialty-bars" data-specialty-bars aria-label="Усі спеціальності поточної вибірки"></ol>
+  </dialog>
+</section>
+<footer class="site-footer">© <strong>Сергій БОЯРЧУК</strong>, 2026</footer>
+</main></body>
+</html>
